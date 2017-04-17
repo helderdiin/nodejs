@@ -1,7 +1,7 @@
 {
   "name": "node-docker",
   "version": "0.0.1",
-  "description": "Repositório para inicio de estudos de Docker em ambiente Node.js.",
+  "description": "Repositório para estudos de Docker em ambiente Node.js.",
   "author": "Helder Traci <helderdiin.work@gmail.com>",
   "scripts": {
     "start": "babel-node ./lib/index.js",

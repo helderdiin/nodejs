@@ -1,6 +1,6 @@
-# node-docker
+# Node Docker
 
-> Repositório para inicio de estudos de Docker em ambiente Node.js.
+> Repositório para estudos de Docker em ambiente Node.js.
 
 # Docker machine
 
@@ -16,8 +16,8 @@ $ eval "$(docker-machine env dev)"
 Para criar uma imagem do projeto utilize os comandos (dentro do diretório do projeto):
 
 ``` bash
-docker build -t node-docker .
-docker run -p 4500:4500 node-docker
+$ docker build -t node-docker .
+$ docker run -p 4500:4500 node-docker
 ```
 
 # Acesso
@@ -25,5 +25,5 @@ docker run -p 4500:4500 node-docker
 Para descobrir o IP da máquina virtual utilize os comandos:
 
 ``` bash
-docker-machine ip dev
+$ docker-machine ip dev
 ```
