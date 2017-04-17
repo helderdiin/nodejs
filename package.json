@@ -4,8 +4,10 @@
   "description": "Repositório para inicio de estudos de Docker em ambiente Node.js.",
   "author": "Helder Traci <helderdiin.work@gmail.com>",
   "scripts": {
-    "test": "babel-node test/routes.js"
     "start": "babel-node ./lib/index.js",
+    "test": "babel-node test/routes.js",
+    "build": "babel lib -d dist",
+    "serve": "node ./dist/index.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
