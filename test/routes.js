@@ -1,7 +1,7 @@
 import supertest from 'supertest';
 import test from 'tape';
 
-import app from '../app';
+import app from '../lib/app';
 
 const api = supertest(app);
 
