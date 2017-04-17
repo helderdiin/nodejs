@@ -16,8 +16,8 @@ $ eval "$(docker-machine env dev)"
 Para criar uma imagem do projeto utilize os comandos (dentro do diretório do projeto):
 
 ``` bash
-$ docker build -t node-docker .
-$ docker run -d -p 4500:4500 node-docker
+$ docker build -t node-docker-image .
+$ docker run -d -p 4500:4500 --name node-docker node-docker-image
 ```
 
 # Acesso
