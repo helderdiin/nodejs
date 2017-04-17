@@ -17,7 +17,7 @@ Para criar uma imagem do projeto utilize os comandos (dentro do diretório do pr
 
 ``` bash
 $ docker build -t node-docker .
-$ docker run -p 4500:4500 node-docker
+$ docker run -d -p 4500:4500 node-docker
 ```
 
 # Acesso
