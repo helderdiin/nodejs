@@ -35,7 +35,7 @@ Para criar uma imagem do projeto utilize os comandos (dentro do diretório do pr
 
 ``` bash
 $ docker build -t node-docker-image .
-$ docker run -d -p 4500:4500 --name node-docker node-docker-image
+$ docker run -d -p 4500:4500 -e AMQP_ADDRESS=$(docker-machine ip dev) --name node-docker node-docker-image
 ```
 
 ## Acesso

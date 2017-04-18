@@ -5,6 +5,7 @@ ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 6.0.0
 ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+ENV AMQP_ADDRESS localhost
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN apt-get update \
@@ -40,4 +41,4 @@ ADD . /var/www/app/current
 
 EXPOSE 4500
 
-CMD ["pm2", "start", "processes.json", "--no-daemon"]
+CMD ["pm2", "start", "processes.json", "--no-daemon", "--node-args", "\"AMQP_ADDRESS=${AMQP_ADDRESS}\""]
