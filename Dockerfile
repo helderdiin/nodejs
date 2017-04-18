@@ -2,7 +2,7 @@ FROM debian:jessie
 
 ENV appDir /var/www/app/current
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 5.1.0
+ENV NODE_VERSION 6.0.0
 ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
