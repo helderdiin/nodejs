@@ -2,6 +2,22 @@
 
 > Repositório para estudos de coisas legais com Node.js
 
+# RabbitMQ
+
+## Instalando
+
+Faça pull da imagem do rabbitmq via docker:
+
+``` bash
+$ docker pull rabbitmq
+```
+
+Crie um container com RabbitMQ:
+
+``` bash
+$ docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+```
+
 # Docker
 
 ## Docker machine
