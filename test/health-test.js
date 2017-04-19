@@ -3,7 +3,7 @@ import { expect } from 'chai';
 
 import { APP } from '../lib/config';
 
-import '../lib/index.js';
+import '../lib/index';
 
 describe('Health route', () => {
   const healthRouteOptions = {
