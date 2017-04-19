@@ -1,3 +1,5 @@
+## [![Build Status](https://travis-ci.org/helderdiin/nodejs.svg?branch=master)](https://travis-ci.org/helderdiin/nodejs)
+
 # Node.js
 
 > Repositório para estudos de coisas legais com Node.js
