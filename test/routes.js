@@ -1,54 +1,34 @@
-import supertest from 'supertest';
-import test from 'tape';
+import http from 'http';
+import { expect } from 'chai';
 
-import app from '../lib/app';
+import { APP } from '../lib/config';
 
-const api = supertest(app);
+import '../lib/index.js';
 
-test('GET /health', t => {
-  api
-  .get('/health')
-  .expect('Content-type', /json/)
-  .expect(200)
-  .end((err, res) => {
-    if (err) {
-      t.fail(err);
-      t.end();
-    } else {
-      t.ok(res.body, 'It should have a response body');
-      t.equals(res.body.healthy, true, 'It should return a healthy parameter and it should be true');
-      t.end();
-    }
+describe('Health route', () => {
+  const healthRouteOptions = {
+    host: APP.host,
+    port: APP.port,
+    path: '/health',
+    method: 'GET'
+  };
+
+  it('get / deve retornar 200', done => {
+    http.get(healthRouteOptions, res => {
+      expect(res.statusCode).to.equal(200);
+      done();
+    });
   });
-});
 
-test('GET /docker', t => {
-  api
-  .get('/docker')
-  .expect('Content-type', /json/)
-  .expect(200)
-  .end((err, res) => {
-    if (err) {
-      t.fail(err);
-      t.end();
-    } else {
-      t.ok(res.body, 'It should have a response body');
-      t.equals(res.body.docker, 'rocks!', 'It should return a docker parameter with value rocks!');
-      t.end();
-    }
-  });
-});
-
-test('GET unknown route', t => {
-  api
-  .get(`/${Math.random() * 10}`)
-  .expect(404)
-  .end((err, res) => {
-    if (err) {
-      t.fail(err);
-      t.end();
-    } else {
-      t.end();
-    }
+  it('get / deve retornar parâmetro verdadeiro', done => {
+    http.get(healthRouteOptions, res => {
+      res.setEncoding('utf8');
+      res.on("data", function(chunk) {
+        const data = JSON.parse(chunk.toString());
+        expect(data.healthy).to.not.be.undefined;
+        expect(data.healthy).to.be.true;
+        done();
+      });
+    });
   });
 });
