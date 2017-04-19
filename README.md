@@ -1,4 +1,4 @@
-## [![Build Status](https://travis-ci.org/helderdiin/nodejs.svg?branch=master)](https://travis-ci.org/helderdiin/nodejs) [![Coverage Status](https://coveralls.io/repos/github/helderdiin/nodejs/badge.svg)](https://coveralls.io/github/helderdiin/nodejs)
+## [![Build Status](https://travis-ci.org/helderdiin/nodejs.svg?branch=master)](https://travis-ci.org/helderdiin/nodejs) [![Coverage Status](https://coveralls.io/repos/github/helderdiin/nodejs/badge.svg?branch=master)](https://coveralls.io/github/helderdiin/nodejs?branch=master)
 
 # Node.js
 
