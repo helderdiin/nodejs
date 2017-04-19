@@ -4,6 +4,14 @@
 
 > Repositório para estudos de coisas legais com Node.js
 
+Coisas legais aprendidas ou em estudo:
+
+* Container (Docker)
+* AMQP (RabbitMQ)
+* Gerenciamento de Processos (PM2)
+* Testes e cobertura (Mocha, Chai e Istanbul)
+* CI (Travis)
+
 # RabbitMQ
 
 ## Instalando
