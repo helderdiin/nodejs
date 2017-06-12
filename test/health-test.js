@@ -15,7 +15,7 @@ describe('Health route', () => {
 
   it('get / deve retornar 200', done => {
     http.get(healthRouteOptions, res => {
-      expect(res.statusCode).to.equal(200);
+      expect(res.statusCode).to.equal(201);
       done();
     });
   });
