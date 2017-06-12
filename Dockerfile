@@ -33,7 +33,7 @@ RUN mkdir -p /var/www/app/current
 WORKDIR ${appDir}
 
 ADD package.json ./
-RUN npm i --production && npm i -g pm2
+RUN npm i --production && npm i -g pm2 && npm run build
 
 ADD . /var/www/app/current
 
