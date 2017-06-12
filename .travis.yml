@@ -1,7 +1,18 @@
+sudo: required
+
+services:
+  - docker
+
 language: node_js
 node_js:
+before_install:
+  - docker run -d --name nodejs helderdiin/nodejs
 after_success:
   - npm run coveralls
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push helderdiin/nodejs;
+    fi
   - curl --data build=true -X POST https://registry.hub.docker.com/u/helderdiin/nodejs/trigger/1266e7a7-3a4b-42db-b04f-fd4870835896/
 branches:
   only:
