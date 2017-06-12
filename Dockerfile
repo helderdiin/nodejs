@@ -33,12 +33,12 @@ RUN mkdir -p /var/www/app/current
 WORKDIR ${appDir}
 
 ADD package.json ./
-RUN npm i --production && npm i -g pm2
+RUN npm i && npm i -g pm2
 
 ADD . /var/www/app/current
 
 EXPOSE 4500
 
-RUN npm run build
+RUN cd /var/www/app/current && npm run build
 
 CMD ["pm2", "start", "processes.json", "--no-daemon", "--node-args", "\"AMQP_ADDRESS=${AMQP_ADDRESS}\""]
