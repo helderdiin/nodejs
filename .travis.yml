@@ -2,10 +2,6 @@ language: node_js
 node_js:
 after_success:
   - npm run coveralls
-  - docker run -d --name nodejs helderdiin/nodejs
-  - docker login --username helderdiin --password $SENHA_DOCKER_HUB
-  - docker commit nodejs helderdiin/nodejs
-  - docker push helderdiin/nodejs
   - curl --data build=true -X POST https://registry.hub.docker.com/u/helderdiin/nodejs/trigger/1266e7a7-3a4b-42db-b04f-fd4870835896/
 branches:
   only:
