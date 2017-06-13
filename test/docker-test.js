@@ -26,7 +26,7 @@ describe('Docker route', () => {
       res.on("data", function(chunk) {
         const data = JSON.parse(chunk.toString());
         expect(data.docker).to.not.be.undefined;
-        expect(data.docker).to.equal('Fera de mais!');
+        expect(data.docker).to.equal('Teste!!');
         done();
       });
     });
